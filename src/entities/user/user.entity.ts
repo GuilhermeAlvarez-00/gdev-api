@@ -1,24 +1,24 @@
 import { InvalidUserError } from "@errors/invalid-user.error";
 
-type TUserEntity = {
+export type TUserEntity = {
   name: string;
   email: string;
   password: string;
 }
 
 export class User {
-  private readonly _name: string;
-  private readonly _email: string;
-  private readonly _password: string;
+  name: string;
+  email: string;
+  password: string;
 
   private constructor({ name, email, password }: TUserEntity) {
     if (!name || !email || !password) {
       throw new InvalidUserError();
     }
 
-    this._name = name;
-    this._email = email;
-    this._password = password;
+    this.name = name;
+    this.email = email;
+    this.password = password;
   }
 
   static create(props: TUserEntity) {

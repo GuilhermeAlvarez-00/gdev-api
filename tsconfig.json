@@ -19,9 +19,11 @@
     "baseUrl": ".",
     "paths": {
       "@errors/*": ["src/errors/*"],
+      "@entities/*": ["src/entities/*"],
       "@routes": ["src/routes/index.ts"],
       "@abstracts/*": ["src/abstracts/*"],
-      "@modules/*": ["src/modules/*"]
+      "@modules/*": ["src/modules/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }
