@@ -1,5 +1,6 @@
 import { describe, test, expect } from "vitest"
 import { User } from "../user.entity"
+import { InvalidUserError } from "@errors/invalid-user.error";
 
 describe("User Entity", () => {
   test("should not create an user without name, email and password", () => {
@@ -10,8 +11,8 @@ describe("User Entity", () => {
         password: "123"
       }
       User.create(userData);
-    }).toThrow("Missing required fields name, email and password");
-  })
+    }).toThrow(InvalidUserError);
+  });
 })
 
 

@@ -1,3 +1,5 @@
+import { InvalidUserError } from "@errors/invalid-user.error";
+
 type TUserEntity = {
   name: string;
   email: string;
@@ -11,7 +13,7 @@ export class User {
 
   private constructor({ name, email, password }: TUserEntity) {
     if (!name || !email || !password) {
-      throw new Error("Missing required fields name, email and password");
+      throw new InvalidUserError();
     }
 
     this._name = name;
