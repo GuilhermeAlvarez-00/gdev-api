@@ -6,8 +6,10 @@ const fastify = Fastifiy({});
 fastify.register(userRoutes);
 
 try {
-  fastify.listen({ port: 3000 }).then(() => console.log("Running on port: 3000"));
+  fastify
+    .listen({ port: 3000 })
+    .then(() => console.log("Running on port: 3000"));
 } catch (error) {
-  fastify.log.error(error)
-  process.exit(1)
+  fastify.log.error(error);
+  process.exit(1);
 }

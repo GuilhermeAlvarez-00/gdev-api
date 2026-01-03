@@ -3,7 +3,7 @@ import { EmailAlreadyInUseError } from "@errors/email-already-in-use.error";
 import type { IUserRepository } from "@modules/user/repositories/user.repository";
 
 export class CreateUserUseCase {
-  constructor(private userRepository: IUserRepository) { }
+  constructor(private userRepository: IUserRepository) {}
 
   async execute(data: TUserEntity) {
     await this.validateUserByEmail(data.email);

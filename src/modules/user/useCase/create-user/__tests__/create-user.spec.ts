@@ -1,7 +1,7 @@
-import { describe, expect, test } from "vitest"
-import { CreateUserUseCase } from "../create-user.usecase"
-import { InMemoryUser } from "@modules/user/repositories/implementations/in-memory/InMemoryUser"
-import { EmailAlreadyInUseError } from "@errors/email-already-in-use.error"
+import { describe, expect, test } from "vitest";
+import { CreateUserUseCase } from "../create-user.usecase";
+import { InMemoryUser } from "@modules/user/repositories/implementations/in-memory/InMemoryUser";
+import { EmailAlreadyInUseError } from "@errors/email-already-in-use.error";
 
 describe("Create User UseCase", () => {
   test("should not create a user with an email that already exists", async () => {
@@ -11,11 +11,11 @@ describe("Create User UseCase", () => {
     const userData = {
       name: "Jhon Doe",
       email: "jhondoe@gmail.com",
-      password: "1234567"
-    }
+      password: "1234567",
+    };
 
-    const user = await createUseCase.execute(userData);
-
-    await expect(createUseCase.execute(userData)).rejects.throw(EmailAlreadyInUseError);
+    await expect(createUseCase.execute(userData)).rejects.throw(
+      EmailAlreadyInUseError
+    );
   });
-})
+});
