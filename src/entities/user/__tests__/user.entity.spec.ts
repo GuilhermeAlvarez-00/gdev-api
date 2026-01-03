@@ -1,5 +1,5 @@
-import { describe, test, expect } from "vitest"
-import { User } from "../user.entity"
+import { describe, test, expect } from "vitest";
+import { User } from "../user.entity";
 import { InvalidUserError } from "@errors/invalid-user.error";
 
 describe("User Entity", () => {
@@ -8,11 +8,9 @@ describe("User Entity", () => {
       const userData = {
         name: "Jhon Doe",
         email: "",
-        password: "123"
-      }
+        password: "123",
+      };
       User.create(userData);
     }).toThrow(InvalidUserError);
   });
-})
-
-
+});
