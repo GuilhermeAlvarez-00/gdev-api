@@ -1,10 +1,12 @@
 import { AppError } from "@abstracts/AppError";
-import type { FastifyReply } from "fastify"
+import type { FastifyReply } from "fastify";
 import { ZodError } from "zod";
 
-export const returnControllerError = (reply: FastifyReply, error: any) => {
+export const returnControllerError = (reply: FastifyReply, error: unknown) => {
   if (error instanceof AppError) {
-    return reply.status(error.statusCode!).send({ message: error?.message ?? "" })
+    return reply
+      .status(error.statusCode!)
+      .send({ message: error?.message ?? "" });
   }
 
   if (error instanceof ZodError) {
@@ -12,4 +14,4 @@ export const returnControllerError = (reply: FastifyReply, error: any) => {
   }
 
   return reply.status(400).send(error);
-}
+};
