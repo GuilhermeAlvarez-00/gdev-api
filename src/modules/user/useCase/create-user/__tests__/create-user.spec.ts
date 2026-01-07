@@ -14,6 +14,8 @@ describe("Create User UseCase", () => {
       password: "1234567",
     };
 
+    await createUseCase.execute(userData);
+
     await expect(createUseCase.execute(userData)).rejects.throw(
       EmailAlreadyInUseError
     );
