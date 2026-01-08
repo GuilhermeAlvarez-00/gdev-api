@@ -1,12 +1,33 @@
 import type { TUserEntity } from "@entities/user/user.entity";
 import type { IUserRepository } from "../../user.repository";
 import { randomUUID } from "node:crypto";
-import type { TUser } from "../../types";
+import type { TFindAllUsersParams, TUser } from "../../types";
 import { DefaultError } from "@errors/default-error";
 
 const users = new Map<string, TUser>();
 
 export class InMemoryUser implements IUserRepository {
+  async findAll(params: TFindAllUsersParams) {
+    let usersData = Array.from(users.values());
+
+    if (params) {
+      for (let [key, value] of Object.entries(params)) {
+        if (!value || !key) continue;
+        value = value.toLocaleLowerCase();
+
+        usersData = usersData.filter((user) => {
+          if (key === "email") return user[key] === value;
+
+          return user[key as keyof typeof user]
+            .toLocaleLowerCase()
+            .includes(value ?? "");
+        });
+      }
+    }
+
+    return usersData;
+  }
+
   async findById(userId: string) {
     const user = users.get(userId);
 

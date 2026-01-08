@@ -1,6 +1,6 @@
 import { User, type TUserEntity } from "@entities/user/user.entity";
 import { EmailAlreadyInUseError } from "@errors/email-already-in-use.error";
-import type { IUserRepository } from "@modules/user/repositories/user.repository";
+import type { IUserRepository } from "@modules/users/repositories/user.repository";
 
 export class CreateUserUseCase {
   constructor(private userRepository: IUserRepository) {}

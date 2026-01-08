@@ -1,5 +1,5 @@
 import type { FastifyRequest, FastifyReply } from "fastify";
-import type { IUserRepository } from "@modules/user/repositories/user.repository";
+import type { IUserRepository } from "@modules/users/repositories/user.repository";
 import z from "zod";
 import { CreateUserUseCase } from "./create-user.usecase";
 import { returnControllerError } from "@utils/return-controller-error";

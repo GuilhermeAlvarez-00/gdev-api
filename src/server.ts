@@ -3,7 +3,7 @@ import { userRoutes } from "./routes";
 
 const fastify = Fastifiy({});
 
-fastify.register(userRoutes);
+fastify.register(userRoutes, { prefix: "/users" });
 
 try {
   fastify

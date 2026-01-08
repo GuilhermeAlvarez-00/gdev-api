@@ -1,4 +1,4 @@
-import { InMemoryUser } from "@modules/user/repositories/implementations/in-memory/InMemoryUser";
+import { InMemoryUser } from "@modules/users/repositories/implementations/in-memory/InMemoryUser";
 import { CreateUserController } from "./create-user.controller";
 
 const inMemoryUser = new InMemoryUser();
