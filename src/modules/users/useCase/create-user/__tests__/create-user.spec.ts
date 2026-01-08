@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { CreateUserUseCase } from "../create-user.usecase";
-import { InMemoryUser } from "@modules/user/repositories/implementations/in-memory/InMemoryUser";
+import { InMemoryUser } from "@modules/users/repositories/implementations/in-memory/InMemoryUser";
 import { EmailAlreadyInUseError } from "@errors/email-already-in-use.error";
 
 describe("Create User UseCase", () => {
@@ -13,6 +13,8 @@ describe("Create User UseCase", () => {
       email: "jhondoe@gmail.com",
       password: "1234567",
     };
+
+    await createUseCase.execute(userData);
 
     await expect(createUseCase.execute(userData)).rejects.throw(
       EmailAlreadyInUseError
