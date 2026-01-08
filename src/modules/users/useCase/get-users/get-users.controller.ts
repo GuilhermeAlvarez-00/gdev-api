@@ -1,4 +1,4 @@
-import type { IUserRepository } from "@modules/user/repositories/user.repository";
+import type { IUserRepository } from "@modules/users/repositories/user.repository";
 import { returnControllerError } from "@utils/return-controller-error";
 import type { FastifyReply, FastifyRequest } from "fastify";
 import z from "zod";

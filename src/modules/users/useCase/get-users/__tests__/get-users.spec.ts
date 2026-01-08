@@ -1,4 +1,4 @@
-import { InMemoryUser } from "@modules/user/repositories/implementations/in-memory/InMemoryUser";
+import { InMemoryUser } from "@modules/users/repositories/implementations/in-memory/InMemoryUser";
 import { describe, expect, test, beforeAll } from "vitest";
 import { GetUsersUseCase } from "../get-users.usecase";
 import { CreateUserUseCase } from "../../create-user/create-user.usecase";

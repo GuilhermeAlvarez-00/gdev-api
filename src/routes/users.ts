@@ -1,5 +1,5 @@
-import { createUserController } from "@modules/user/useCase/create-user";
-import { getUsersController } from "@modules/user/useCase/get-users";
+import { createUserController } from "@modules/users/useCase/create-user";
+import { getUsersController } from "@modules/users/useCase/get-users";
 import { type FastifyInstance } from "fastify";
 
 export const userRoutes = async (fastify: FastifyInstance) => {

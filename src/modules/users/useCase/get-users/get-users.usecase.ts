@@ -1,5 +1,5 @@
 import type { TFindAllUsersParams } from "@modules/user/repositories/types";
-import type { IUserRepository } from "@modules/user/repositories/user.repository";
+import type { IUserRepository } from "@modules/users/repositories/user.repository";
 
 export class GetUsersUseCase {
   constructor(private userRepository: IUserRepository) {}

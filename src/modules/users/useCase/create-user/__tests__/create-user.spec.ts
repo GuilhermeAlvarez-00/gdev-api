@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { CreateUserUseCase } from "../create-user.usecase";
-import { InMemoryUser } from "@modules/user/repositories/implementations/in-memory/InMemoryUser";
+import { InMemoryUser } from "@modules/users/repositories/implementations/in-memory/InMemoryUser";
 import { EmailAlreadyInUseError } from "@errors/email-already-in-use.error";
 
 describe("Create User UseCase", () => {
