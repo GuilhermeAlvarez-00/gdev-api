@@ -9,6 +9,7 @@ export default defineConfig(
   tseslint.configs.recommended,
   {
     rules: {
+      "prefer-const": "off",
       "@typescript-eslint/triple-slash-reference": "off",
     },
   }
