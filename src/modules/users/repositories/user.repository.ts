@@ -1,5 +1,6 @@
 import type { TUserEntity } from "@entities/user/user.entity";
-import type { TFindAllUsersParams, TUpdateUserRequest, TUser } from "./types";
+import type { TFindAllUsersParams, TUser } from "./types";
+import type { TUpdateUserRequest } from "../useCase/update-user/types";
 
 export interface IUserRepository {
   save(data: TUserEntity): Promise<TUser>;

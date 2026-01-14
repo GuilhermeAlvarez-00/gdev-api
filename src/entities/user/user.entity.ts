@@ -1,10 +1,13 @@
 import { InvalidUserError } from "@errors/invalid-user.error";
+import z from "zod";
 
-export type TUserEntity = {
-  name: string;
-  email: string;
-  password: string;
-};
+export const UserEntitySchema = z.object({
+  name: z.string(),
+  email: z.string(),
+  password: z.string(),
+});
+
+export type TUserEntity = z.infer<typeof UserEntitySchema>;
 
 export class User {
   name: string;
@@ -25,5 +28,3 @@ export class User {
     return new User(props);
   }
 }
-
-// Missing required fields name, email and password

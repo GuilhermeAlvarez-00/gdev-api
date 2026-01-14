@@ -8,8 +8,3 @@ export type TFindAllUsersParams = {
   name?: string | undefined;
   email?: string | undefined;
 };
-
-export type TUpdateUserRequest = {
-  id: string;
-  data: Partial<Omit<TUserEntity, "password">>;
-};
