@@ -1,7 +1,11 @@
 import type { TUserEntity } from "@entities/user/user.entity";
 import type { IUserRepository } from "../../user.repository";
 import { randomUUID } from "node:crypto";
-import type { TFindAllUsersParams, TUser } from "../../types";
+import type {
+  TFindAllUsersParams,
+  TUpdateUserRequest,
+  TUser,
+} from "../../types";
 import { DefaultError } from "@errors/default-error";
 
 const users = new Map<string, TUser>();
@@ -52,6 +56,23 @@ export class InMemoryUser implements IUserRepository {
       users.set(user.id, user);
 
       return user;
+    } catch (error) {
+      throw new DefaultError(error);
+    }
+  }
+
+  async updateById({ id, data }: TUpdateUserRequest): Promise<TUser> {
+    try {
+      const user = users.get(id);
+      users.set(id, {
+        ...user!,
+        ...data,
+      });
+
+      return {
+        ...user!,
+        ...data,
+      };
     } catch (error) {
       throw new DefaultError(error);
     }
