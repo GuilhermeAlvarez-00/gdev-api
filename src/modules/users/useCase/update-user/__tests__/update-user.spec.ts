@@ -2,9 +2,9 @@ import { describe, expect, test, beforeAll } from "vitest";
 import { InMemoryUser } from "@modules/users/repositories/implementations/in-memory/InMemoryUser";
 import { UpdateUserUseCase } from "../update-user.usecase";
 import { InvalidUserError } from "@errors/invalid-user.error";
-import type { TUpdateUserRequest } from "@modules/users/repositories/types";
 import { CreateUserUseCase } from "../../create-user/create-user.usecase";
 import { GetUsersUseCase } from "../../get-users/get-users.usecase";
+import type { TUpdateUserRequest } from "../types";
 
 const inMemoryUser = new InMemoryUser();
 
