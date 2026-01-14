@@ -1,4 +1,4 @@
-import type { TFindAllUsersParams } from "@modules/user/repositories/types";
+import type { TFindAllUsersParams } from "@modules/users/repositories/types";
 import type { IUserRepository } from "@modules/users/repositories/user.repository";
 
 export class GetUsersUseCase {
